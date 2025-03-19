@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace TestTaskDevelopsToday;
 
-class Program(UserInterface userInterface)
+class Program(IUserInterfaceService userInterfaceService)
 {
     static async Task Main(string[] args)
     {
@@ -17,7 +17,7 @@ class Program(UserInterface userInterface)
 
     private async Task Run()
     {
-        await userInterface.Start();
+        await userInterfaceService.Start();
     }
 
     private static IHostBuilder CreateHostBuilder(string[] args)
@@ -28,7 +28,7 @@ class Program(UserInterface userInterface)
                 services.AddTransient<Program>();
                 services.AddTransient<IRepository, Repository>();
                 services.AddTransient<SqlConnectionFactory>();
-                services.AddSingleton<UserInterface>();
+                services.AddSingleton<IUserInterfaceService, UserInterfaceServiceService>();
             });
     }
 }

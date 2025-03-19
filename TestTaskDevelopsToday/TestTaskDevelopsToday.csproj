@@ -6,7 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    </PropertyGroup>
+      <UserSecretsId>1813e7be-eda2-428e-9953-5b28512df4f6</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="CsvHelper" Version="33.0.1" />

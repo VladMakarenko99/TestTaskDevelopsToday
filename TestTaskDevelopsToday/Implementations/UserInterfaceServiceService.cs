@@ -5,7 +5,7 @@ using TestTaskDevelopsToday.Utilities;
 
 namespace TestTaskDevelopsToday.Implementations;
 
-public class UserInterface(IRepository repository)
+public class UserInterfaceServiceService(IRepository repository) : IUserInterfaceService
 {
     public async Task Start()
     {
